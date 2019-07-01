@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Login from "../auth/login";
+import loginImg from "../../../static/assets/images/auth/login.jpg";
 
 export default class Auth extends Component {
     constructor(props) {
@@ -7,23 +8,25 @@ export default class Auth extends Component {
 
         this.handleSuccessfulAuth = this.handleSuccessfulAuth.bind(this);
         this.handleUnSuccessfulAuth = this.handleUnSuccessfulAuth.bind(this);
+      
     }
 
     handleSuccessfulAuth() {
-        this.props.handleSuccessfulAuth();
+        this.props.handleSuccessfulLogin();
         this.props.history.push("/");
     }
 
     handleUnSuccessfulAuth() {
-        this.props.handleUnSuccessfulAuth();
+        this.props.handleUnSuccessfulLogin();
 
     }
+   
     render() {
         return (
         <div className = "auth-page-wrapper">
             <div className = "left-column"
                 style = {{
-                    backgroundImage: 'url("../../../static/assets/images/auth/login.jpg")'
+                    backgroundImage: `url(${loginImg})`
                 }}
             />
 
